@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { WorkersComponent } from './workers/workers.component';
-import { LoadDetailsComponent } from './load-details/load-details.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PurchaseRegisterComponent } from './purchase-register/purchase-register.component';
 import { CreatePurchaseComponent } from './create-purchase/create-purchase.component';
@@ -15,7 +14,6 @@ import { CreatePurchaseComponent } from './create-purchase/create-purchase.compo
     AppComponent,
     MenuComponent,
     WorkersComponent,
-    LoadDetailsComponent,
     PurchaseRegisterComponent,
     CreatePurchaseComponent
   ],

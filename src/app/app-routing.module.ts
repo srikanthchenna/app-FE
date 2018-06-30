@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-//import { MenuComponent } from './menu/menu.component';
 import { WorkersComponent } from './workers/workers.component';
-import { LoadDetailsComponent } from './load-details/load-details.component';
 import { PurchaseRegisterComponent } from './purchase-register/purchase-register.component';
+import { CreatePurchaseComponent } from './create-purchase/create-purchase.component';
 
 
 const routes: Routes = [
@@ -13,14 +12,13 @@ const routes: Routes = [
     	component: WorkersComponent
   	},
 	{
-   	 	path: 'purchaseRegister',
+   	 	path: '',
     	component: PurchaseRegisterComponent
   	},
-
   	{
-	    path: '',
-	    component: LoadDetailsComponent
- 	}
+   	 	path: 'createPurchase',
+    	component: CreatePurchaseComponent
+  	}
 ];
 
 @NgModule({
