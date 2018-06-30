@@ -7,13 +7,15 @@ import { MenuComponent } from './menu/menu.component';
 import { WorkersComponent } from './workers/workers.component';
 import { LoadDetailsComponent } from './load-details/load-details.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PurchaseRegisterComponent } from './purchase-register/purchase-register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     WorkersComponent,
-    LoadDetailsComponent
+    LoadDetailsComponent,
+    PurchaseRegisterComponent
   ],
   imports: [
     BrowserModule,
