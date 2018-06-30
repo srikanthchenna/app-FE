@@ -8,6 +8,7 @@ import { WorkersComponent } from './workers/workers.component';
 import { LoadDetailsComponent } from './load-details/load-details.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PurchaseRegisterComponent } from './purchase-register/purchase-register.component';
+import { CreatePurchaseComponent } from './create-purchase/create-purchase.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PurchaseRegisterComponent } from './purchase-register/purchase-register
     MenuComponent,
     WorkersComponent,
     LoadDetailsComponent,
-    PurchaseRegisterComponent
+    PurchaseRegisterComponent,
+    CreatePurchaseComponent
   ],
   imports: [
     BrowserModule,
