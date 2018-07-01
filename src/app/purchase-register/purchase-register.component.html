@@ -2,11 +2,74 @@
 
 <table>
 	<tr>
-		<th *ngFor = "let header of purchaseHeader">
-			{{header}}
+		<th>
+				slno
+				<input [(ngModel)]="srhSlno" placeholder="Enter slno">				
 		</th>
+		<th>
+				Vehicle
+				<input [(ngModel)]="srhVehicle" placeholder="#Vehicle">
+		</th>
+		<th>
+				Product Type
+				<select [(ngModel)]="srhProductType">
+				<option>Paddy</option>
+				</select>
+				
+		</th>
+		<th>
+				# of Bags
+		</th>
+		<th>
+				Quantity
+		</th>
+		<th>
+				Qunatity Type
+		</th>
+		<th>
+				Price per Quintal
+		</th>
+		<th>
+				Purchase Adjustment
+		</th>
+		<th>
+				Aasami Name
+				<input [(ngModel)]="srhAasami" placeholder="Aasami Name">				
+		</th>
+		<th>
+				Broker Name
+				<input [(ngModel)]="srhBroker" placeholder="Broker Name">
+				
+
+		</th>
+		<th>
+				Final Settlement
+		</th>
+		<th>
+				Status
+				<select [(ngModel)]='srhStatus'>
+					<option>Purchased</option>
+					<option>Pending</option>
+				</select>
+
+		</th>
+		
+		<!-- <th *ngFor = "let header of purchaseHeader">
+			{{header.text}}
+			<span ng-if="{{header.searchType}}">
+				<input type="text"/>
+			</span>
+
+		</th> -->
 	</tr>
-	<tr *ngFor = "let purchase of purchaseList">
+	<tr *ngFor = "let purchase of purchaseList | filterAndSortTable : {slno: srhSlno,
+		 vno: srhVehicle,
+		 productType:srhProductType,
+		 aasami:srhAasami,
+		 broker:srhBroker,
+		 status:srhStatus
+
+		}">
 		<td>{{purchase.sno}}</td>
 		<td>{{purchase.vehicle.vehicleNo}}</td>
 		<td>{{purchase.productType}}</td>
