@@ -1,5 +1,5 @@
 export class VehicleDetails {
-vehicleNo:number;
+vehicleNo:string;
 emptyWeight:number;
 loadWeight:number;
 tareWeight:number;
