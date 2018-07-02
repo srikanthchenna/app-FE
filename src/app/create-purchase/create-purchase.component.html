@@ -1,4 +1,181 @@
 <p>Create Purchase</p>
-<div class="row">puchase details</div>
-<div class="row">vehicle details</div>
-<div class="row">Adjustment details</div>
+<form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+	<div class="panel-group">
+		<div class="panel panel-info">
+			<div class="panel-heading">Puchase details</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="sno">SNO :</label> <input type="text"
+								formControlName="sno" placeholder="sno" name="sno"
+								class="form-control" id="sno">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="aasami_name">Aasami Name:</label> <input type="text"
+								formControlName="aasami_name" placeholder="aasami_name"
+								name="aasami_name" class="form-control" id="aasami_name">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="broker_name">Broker Name:</label> <input type="text"
+								formControlName="broker_name" placeholder="broker_name"
+								name="broker_name" class="form-control" id="broker_name">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="product_name">Product Name:</label> <input
+								type="text" formControlName="product_name"
+								placeholder="product_name" name="product_name"
+								class="form-control" id="product_name">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="bags_count">Bags Count:</label> <input type="text"
+								formControlName="bags_count" placeholder="bags_count"
+								name="bags_count" class="form-control" id="bags_count">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="quantity">Quantity:</label> <input type="text"
+								formControlName="quantity" placeholder="quantity"
+								name="quantity" class="form-control" id="quantity"> <input
+								type="text" formControlName="quantity_unit"
+								placeholder="quantity_unit" name="quantity_unit"
+								class="form-control" id="quantity_unit">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="price_per_quintals">Price Per Quintals:</label> <input
+								type="text" formControlName="price_per_quintals"
+								placeholder="price_per_quintals" name="price_per_quintals"
+								class="form-control" id="price_per_quintals">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="final_settlement">Final Settlement:</label> <input
+								type="text" formControlName="final_settlement"
+								placeholder="final_settlement" name="final_settlement"
+								class="form-control" id="final_settlement">
+						</div>
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel-group">
+		<div class="panel panel-info">
+			<div class="panel-heading">Vehicle Details</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="vehicle_no">Vehicle No:</label> <input type="text"
+								formControlName="vehicle_no" placeholder="vehicle_no"
+								name="vehicle_no" class="form-control" id="vehicle_no">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="weight_slip">Weight Slip:</label> <input type="text"
+								formControlName="weight_slip" placeholder="weight_slip"
+								name="weight_slip" class="form-control" id="weight_slip">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="empty_weight">Empty Weight:</label> <input
+								type="text" formControlName="empty_weight"
+								placeholder="empty_weight" name="empty_weight"
+								class="form-control" id="empty_weight">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="load_weight">Load Weight:</label> <input type="text"
+								formControlName="load_weight" placeholder="load_weight"
+								name="load_weight" class="form-control" id="load_weight">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="tare_weight">Tare Weight:</label> <input type="text"
+								formControlName="tare_weight" placeholder="tare_weight"
+								name="tare_weight" class="form-control" id="tare_weight">
+						</div>
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="panel-group">
+		<div class="panel panel-info">
+			<div class="panel-heading">Adjustment details</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="bags_cost">Bags Cost:</label> <input type="text"
+								formControlName="bags_cost" placeholder="bags_cost"
+								name="bags_cost" class="form-control" id="bags_cost">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="weight_bridge_cost">Weight BridgeCost:</label> <input
+								type="text" formControlName="weight_bridge_cost"
+								placeholder="weight_bridge_cost" name="weight_bridge_cost"
+								class="form-control" id="weight_bridge_cost">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="kulli">Kulli:</label> <input type="text"
+								formControlName="kulli" placeholder="kulli" name="kulli"
+								class="form-control" id="kulli">
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="misc_cost">Misc Cost:</label> <input type="text"
+								formControlName="misc_cost" placeholder="misc_cost"
+								name="misc_cost" class="form-control" id="misc_cost">
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="form-group">
+							<label for="labour_cost">Labour Cost:</label> <input type="text"
+								formControlName="labour_cost" placeholder="labour_cost"
+								name="labour_cost" class="form-control" id="labour_cost">
+						</div>
+					</div>
+					<div class="col-md-4"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div>
+			<button class="btn btn-primary" [disabled]="!purchase.valid">Submit</button>
+		</div>
+	</div>
+</form>

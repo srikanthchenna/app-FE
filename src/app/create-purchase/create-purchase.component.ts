@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-create-purchase',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatePurchaseComponent implements OnInit {
 
-  constructor() { }
+	addForm: FormGroup;
+	
+  constructor(private formBuilder: FormBuilder) { }
+  
+  onSubmit(purchaseOrder){
+    console.log(purchaseOrder.value);
+    alert("The purchaseOrder was submitted");
+  }
 
   ngOnInit() {
+  	this.addForm = this.formBuilder.group({
+      id: [],
+      email: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required]
+    });
   }
 
 }

@@ -1,6 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import {PurchaseRegisterDetails} from './../../beans/purchase-register-details';
-import {SearchInput} from './../../beans/searchInput';
 
 @Pipe({
   name: 'filterAndSortTable'

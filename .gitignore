@@ -1,1 +1,5 @@
 node_modules/  
+/.settings/
+/node_modules/
+/.project
+/.editorconfig
