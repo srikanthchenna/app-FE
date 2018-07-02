@@ -70,7 +70,7 @@
 		 aasami:srhAasami,
 		 broker:srhBroker,
 		 status:srhStatus
-		}|paginate: { itemsPerPage: itemsPerPageCount||1, currentPage: p }">
+		}|paginate: { itemsPerPage: itemsPerPageCount||10, currentPage: p }">
 		<td>{{purchase.sno}}</td>
 		<td>{{purchase.vehicle.vehicleNo}}</td>
 		<td>{{purchase.productType}}</td>
@@ -91,7 +91,7 @@
 </span>
 <span class ='paginationCount'>
 	<select [(ngModel)]="itemsPerPageCount">
-		<option ng-selected="selected">1</option>
+		<option>1</option>
 		<option>2</option>
 		<option>3</option>
 		<option>4</option>
