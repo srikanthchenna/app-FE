@@ -1,3 +1,6 @@
+div{
+    font-family: sans-serif;
+}
 table{
     border: 1px solid;
     background-color: white;
@@ -25,4 +28,7 @@ th{
 .paginationCount{
     margin: 0px;
     display: inline-block;
+  }
+  .inputFilter {
+    text-align: center;
   }
