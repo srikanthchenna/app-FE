@@ -4,7 +4,7 @@
 	<tr>
 		<th>
 				slno
-				<input [(ngModel)]="srhSlno" placeholder="Enter slno">				
+				<input [(ngModel)]="srhSlno" placeholder="slno" size="2">				
 		</th>
 		<th>
 				Vehicle
@@ -34,11 +34,11 @@
 		</th>
 		<th>
 				Aasami Name
-				<input [(ngModel)]="srhAasami" placeholder="Aasami Name">				
+				<input [(ngModel)]="srhAasami" placeholder="Aasami Name" size="10">				
 		</th>
 		<th>
 				Broker Name
-				<input [(ngModel)]="srhBroker" placeholder="Broker Name">
+				<input [(ngModel)]="srhBroker" placeholder="Broker Name" size="10">
 				
 
 		</th>
@@ -62,14 +62,15 @@
 
 		</th> -->
 	</tr>
+	
+	<tr>&nbsp;</tr>
 	<tr *ngFor = "let purchase of purchaseList | filterAndSortTable : {slno: srhSlno,
 		 vno: srhVehicle,
 		 productType:srhProductType,
 		 aasami:srhAasami,
 		 broker:srhBroker,
 		 status:srhStatus
-
-		}">
+		}|paginate: { itemsPerPage: itemsPerPageCount||1, currentPage: p }">
 		<td>{{purchase.sno}}</td>
 		<td>{{purchase.vehicle.vehicleNo}}</td>
 		<td>{{purchase.productType}}</td>
@@ -84,3 +85,19 @@
 		<td>{{purchase.status}}</td>
 	</tr>
 </table>
+<div class ='paginationBox'>
+<span class ='paginationNav'>
+	 <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</span>
+<span class ='paginationCount'>
+	<select [(ngModel)]="itemsPerPageCount">
+		<option ng-selected="selected">1</option>
+		<option>2</option>
+		<option>3</option>
+		<option>4</option>
+		<option>5</option>	
+	</select>
+</span>
+</div>
+				
+	

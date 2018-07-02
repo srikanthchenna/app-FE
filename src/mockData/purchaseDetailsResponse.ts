@@ -15,7 +15,7 @@ export const PURCHASE_DETAILS: PurchaseRegisterDetails[] =[
       "pricePerQuintals": 1500,
       "purchaseAdjustment":"purchaseAdjustment",
       "finalSettlement": 75000,
-      "status": "Purchased",
+      "status": "Pending",
     },
     {
       
