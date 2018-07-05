@@ -1,25 +1,36 @@
-<nav>
-  <ul>
-  	 <li>
-        <a routerLink="">
-          <i class="material-icons">purchase Register</i>
-        </a>
-        &nbsp;
-        <span>purchase Register</span>
+<nav class="navbar sticky-top navbar-expand navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <button class="btn btn-outline-success" type="button">
+          <a class="nav-link" href="#" routerLink="">Purchase Register
+            <span class="sr-only">(current)</span>
+          </a>
+
+        </button>
       </li>
-  	<li>
-      <a routerLink="createPurchase">
-        <i class="material-icons">Create Purchase</i>
-      </a>
-      &nbsp;
-      <span>Create Purchase</span>
-    </li>
-    <li>
-        <a routerLink="workers">
-          <i class="material-icons">W</i>
+      <li class="nav-item active">
+          <button class="btn btn-outline-success" type="button">
+        
+        <a class="nav-link" href="#" routerLink="createPurchase">Create Purchase
+          <span class="sr-only"></span>
         </a>
-        &nbsp;
-        <span>Workers</span>
-     </li>
-  </ul>
+        </button>
+      </li>
+      <li class="nav-item active">
+          <button class="btn btn-outline-success" type="button">
+        
+        <a class="nav-link" href="#" routerLink="workers">Workers
+          <span class="sr-only"></span>
+        </a>
+        </button>
+      </li>
+    </ul>
+  </div>
 </nav>
