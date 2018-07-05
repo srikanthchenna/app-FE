@@ -1,59 +1,168 @@
 <h3>Purchase Register view</h3>
 
-<table class ="table table-hover">
+<!-- Vehicle Modal -->
+<div class="modal" id="vehicleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="vehicleModalLabel">Vehicle Details</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<table class="table table-hover">
+					<tbody *ngIf="selectedVehicle">
+						<tr>
+							<th scope="row">Vehile #</th>
+							<td>
+								{{selectedVehicle.vehicleNo}}
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">Empty Weight</th>
+							<td>
+								{{selectedVehicle.emptyWeight}}
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">Load Weight</th>
+							<td>
+								{{selectedVehicle.loadWeight}}
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">Tare Weight</th>
+							<td>
+								{{selectedVehicle.tareWeight}}
+							</td>
+						</tr>
+
+						<tr>
+							<th scope="row">Weight Slip #</th>
+							<td>
+								{{selectedVehicle.weightSlip}}
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Purchase Adj Modal -->
+<div class="modal" id="purchaseAdjModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="purchaseAdjModalLabel">Purchase Adjustmant Details</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<table class="table table-hover">
+							<tbody *ngIf="selectedPurchaseAdj">
+							<tr>
+								<th scope="row">Bags Cost</th>
+								<td>
+									{{selectedPurchaseAdj.bagsCost}}
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">Weight Bridge Cost</th>
+								<td>
+									{{selectedPurchaseAdj.weightBridgeCost}}
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">Kulli</th>
+								<td>
+									{{selectedPurchaseAdj.kulli}}
+								</td>
+							</tr>
+							<tr>
+								<th scope="row">Misc Cost</th>
+								<td>
+									{{selectedPurchaseAdj.miscCost}}
+								</td>
+							</tr>
+	
+							<tr>
+								<th scope="row">Labour Cost #</th>
+								<td>
+									{{selectedPurchaseAdj.labourCost}}
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+				</div>
+			</div>
+		</div>
+	</div>
+	
+<table class="table table-hover">
 	<thead>
 		<th>
-				slno
-				<input [(ngModel)]="srhSlno" placeholder="slno" size="2" class ='inputFilter'>				
+			slno
+			<input [(ngModel)]="srhSlno" placeholder="slno" size="2" class='inputFilter'>
 		</th>
 		<th>
-				Vehicle
-				<input [(ngModel)]="srhVehicle" placeholder="Venhicle No" size="10"  class ='inputFilter'>
+			Vehicle
+			<input [(ngModel)]="srhVehicle" placeholder="Venhicle No" size="10" class='inputFilter'>
 		</th>
 		<th>
-				Product Type
-				<select [(ngModel)]="srhProductType">
+			Product Type
+			<select [(ngModel)]="srhProductType">
 				<option>Paddy</option>
-				</select>
-				
-		</th>
-		<th>
-				# of Bags
-		</th>
-		<th>
-				Quantity
-		</th>
-		<th>
-				Qunatity Type
-		</th>
-		<th>
-				Price per Quintal
-		</th>
-		<th>
-				Purchase Adjustment
-		</th>
-		<th>
-				Aasami Name
-				<input [(ngModel)]="srhAasami" placeholder="Aasami Name" size="10" class ='inputFilter'>				
-		</th>
-		<th>
-				Broker Name
-				<input [(ngModel)]="srhBroker" placeholder="Broker Name" size="10" class ='inputFilter'>
-				
+			</select>
 
 		</th>
 		<th>
-				Final Settlement
+			# of Bags
 		</th>
 		<th>
-				Status
-				<select [(ngModel)]='srhStatus'>
-					<option>Purchased</option>
-					<option>Pending</option>
-				</select>
+			Quantity
+		</th>
+		<th>
+			Qunatity Type
+		</th>
+		<th>
+			Price per Quintal
+		</th>
+		<th>
+			Purchase Adjustment
+		</th>
+		<th>
+			Aasami Name
+			<input [(ngModel)]="srhAasami" placeholder="Aasami Name" size="10" class='inputFilter'>
+		</th>
+		<th>
+			Broker Name
+			<input [(ngModel)]="srhBroker" placeholder="Broker Name" size="10" class='inputFilter'>
+
 
 		</th>
-		
+		<th>
+			Final Settlement
+		</th>
+		<th>
+			Status
+			<select [(ngModel)]='srhStatus'>
+				<option>Purchased</option>
+				<option>Pending</option>
+			</select>
+
+		</th>
+
 		<!-- <th *ngFor = "let header of purchaseHeader">
 			{{header.text}}
 			<span ng-if="{{header.searchType}}">
@@ -62,42 +171,45 @@
 
 		</th> -->
 	</thead>
-	
-	<tr *ngFor = "let purchase of purchaseList | filterAndSortTable : {slno: srhSlno,
+
+	<tr *ngFor="let purchase of purchaseList | filterAndSortTable : {slno: srhSlno,
 		 vno: srhVehicle,
 		 productType:srhProductType,
 		 aasami:srhAasami,
 		 broker:srhBroker,
 		 status:srhStatus
-		}|paginate: { itemsPerPage: itemsPerPageCount||10, currentPage: p }">
+		}|paginate: { itemsPerPage: itemsPerPageCount||10, currentPage: p }; let i = index">
 		<td>{{purchase.sno}}</td>
-		<td>{{purchase.vehicle.vehicleNo}}</td>
+		<td>
+			<a href="#vehicleModal" data-toggle="modal" (click)="setVehicleDetails(i)">{{purchase.vehicle.vehicleNo}}</a>
+
+		</td>
 		<td>{{purchase.productType}}</td>
 		<td>{{purchase.bagsCount}}</td>
 		<td>{{purchase.quantity}}</td>
 		<td>{{purchase.quantityUnit}}</td>
 		<td>{{purchase.pricePerQuintals}}</td>
-		<td>{{purchase.purchaseAdjustment}}</td>
+		<td>
+			<a href="#purchaseAdjModal" data-toggle="modal" (click)="setPurchaseAdjDetails(i)">
+				 Adjustment</a>
+		</td>
 		<td>{{purchase.aasamiName}}</td>
 		<td>{{purchase.brokerName}}</td>
 		<td>{{purchase.finalSettlement}}</td>
 		<td>{{purchase.status}}</td>
 	</tr>
 </table>
-<div class ='paginationBox'>
-<span class ='paginationNav'>
-	 <pagination-controls (pageChange)="p = $event"></pagination-controls>
-</span>
-<span class ='paginationCount'>
-	<select [(ngModel)]="itemsPerPageCount">
-		<option>1</option>
-		<option>2</option>
-		<option>3</option>
-		<option>4</option>
-		<option>5</option>	
-	</select>
-</span>
+<div class='paginationBox'>
+	<span class='paginationNav'>
+		<pagination-controls (pageChange)="p = $event"></pagination-controls>
+	</span>
+	<span class='paginationCount'>
+		<select [(ngModel)]="itemsPerPageCount">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>5</option>
+		</select>
+	</span>
 </div>
-	
-
-	

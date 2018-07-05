@@ -13,7 +13,13 @@ export const PURCHASE_DETAILS: PurchaseRegisterDetails[] =[
       "quantity": 50,
       "quantityUnit": "Quintals",
       "pricePerQuintals": 1500,
-      "purchaseAdjustment":"purchaseAdjustment",
+      "purchaseAdjustment": {
+        "bagsCost": 10,
+        "weightBridgeCost": 150,
+        "kulli": 300,
+        "miscCost": 300,
+        "labourCost": 1200
+      },
       "finalSettlement": 75000,
       "status": "Pending",
     },
@@ -35,7 +41,13 @@ export const PURCHASE_DETAILS: PurchaseRegisterDetails[] =[
       "quantity": 55,
       "quantityUnit": "Quintals",
       "pricePerQuintals": 1500,
-      "purchaseAdjustment": "purchaseAdjustments",
+      "purchaseAdjustment": {
+        "bagsCost": 10,
+        "weightBridgeCost": 150,
+        "kulli": 300,
+        "miscCost": 300,
+        "labourCost": 1200
+      },
       "finalSettlement": 82500,
       "status": "Purchased",
       
@@ -58,7 +70,13 @@ export const PURCHASE_DETAILS: PurchaseRegisterDetails[] =[
       "quantity": 60,
       "quantityUnit": "Quintals",
       "pricePerQuintals": 1500,
-      "purchaseAdjustment": "Adj",
+      "purchaseAdjustment": {
+        "bagsCost": 10,
+        "weightBridgeCost": 150,
+        "kulli": 300,
+        "miscCost": 300,
+        "labourCost": 1200
+      },
       "finalSettlement": 90000,
       "status": "Purchased",
      
@@ -81,7 +99,13 @@ export const PURCHASE_DETAILS: PurchaseRegisterDetails[] =[
       "quantity": 50,
       "quantityUnit": "Quintals",
       "pricePerQuintals": 1500,
-      "purchaseAdjustment": "adj",
+      "purchaseAdjustment": {
+        "bagsCost": 10,
+        "weightBridgeCost": 150,
+        "kulli": 300,
+        "miscCost": 300,
+        "labourCost": 1200
+      },
       "finalSettlement": 150000,
       "status": "Purchased",
       
@@ -102,7 +126,13 @@ export const PURCHASE_DETAILS: PurchaseRegisterDetails[] =[
       "quantity": 50,
       "quantityUnit": "Quintals",
       "pricePerQuintals": 1500,
-      "purchaseAdjustment": "addd",
+      "purchaseAdjustment": {
+        "bagsCost": 10,
+        "weightBridgeCost": 150,
+        "kulli": 300,
+        "miscCost": 300,
+        "labourCost": 1200
+      },
       "finalSettlement": 150000,
       "status": "Purchased",
       }

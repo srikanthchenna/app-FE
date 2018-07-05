@@ -1,4 +1,6 @@
 import {VehicleDetails} from './vehicle-details';
+import {PurchaseAdjDetails} from './purchaseAdjDetails';
+
 export class PurchaseRegisterDetails {
 	sno:string;
 	vehicle:VehicleDetails;//link
@@ -7,7 +9,7 @@ export class PurchaseRegisterDetails {
 	quantity:number;
 	quantityUnit:string;
 	pricePerQuintals:number;
-	purchaseAdjustment:String;//link
+	purchaseAdjustment:PurchaseAdjDetails;//link
 	brokerName:string;
 	aasamiName:string;
 	finalSettlement:number;

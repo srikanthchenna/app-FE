@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {PurchaseRegisterDetails} from './../../beans/purchase-register-details';
+import {PurchaseAdjDetails} from './../../beans/purchaseAdjDetails';
 
 import {PURCHASE_DETAILS} from '../../mockData/purchaseDetailsResponse';
+import { VehicleDetails } from '../../beans/vehicle-details';
 @Component({
   selector: 'app-purchase-register',
   templateUrl: './purchase-register.component.html',
@@ -9,11 +11,22 @@ import {PURCHASE_DETAILS} from '../../mockData/purchaseDetailsResponse';
 })
 export class PurchaseRegisterComponent implements OnInit {
   purchaseList : PurchaseRegisterDetails[];
+  selectedPurchaseAdj : PurchaseAdjDetails;
+  selectedVehicle : VehicleDetails;
+  
   constructor() { }
 
   ngOnInit() {
+    //mocking Data
     this.purchaseList = PURCHASE_DETAILS;// TODO make this a ajax call later
+   
   }
 
- 
+  setPurchaseAdjDetails(i){
+    this.selectedPurchaseAdj = this.purchaseList[i].purchaseAdjustment;
+  }
+  setVehicleDetails(i){
+    this.selectedVehicle = this.purchaseList[i].vehicle;
+  }
+
 }
