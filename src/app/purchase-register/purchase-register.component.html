@@ -178,10 +178,10 @@
 		 aasami:srhAasami,
 		 broker:srhBroker,
 		 status:srhStatus
-		}|paginate: { itemsPerPage: itemsPerPageCount||10, currentPage: p }; let i = index">
+		}|paginate: { itemsPerPage: itemsPerPageCount||10, currentPage: p }">
 		<td>{{purchase.sno}}</td>
 		<td>
-			<a href="#vehicleModal" data-toggle="modal" (click)="setVehicleDetails(i)">{{purchase.vehicle.vehicleNo}}</a>
+			<a href="#vehicleModal" data-toggle="modal" (click)="setVehicleDetails(purchaseList.indexOf(purchase))">{{purchase.vehicle.vehicleNo}}</a>
 
 		</td>
 		<td>{{purchase.productType}}</td>
@@ -190,7 +190,7 @@
 		<td>{{purchase.quantityUnit}}</td>
 		<td>{{purchase.pricePerQuintals}}</td>
 		<td>
-			<a href="#purchaseAdjModal" data-toggle="modal" (click)="setPurchaseAdjDetails(i)">
+			<a href="#purchaseAdjModal" data-toggle="modal" (click)="setPurchaseAdjDetails(purchaseList.indexOf(purchase))">
 				 Adjustment</a>
 		</td>
 		<td>{{purchase.aasamiName}}</td>
