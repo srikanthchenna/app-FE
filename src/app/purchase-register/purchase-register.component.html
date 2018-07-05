@@ -1,7 +1,7 @@
 <h3>Purchase Register view</h3>
 
-<table>
-	<tr>
+<table class ="table table-hover">
+	<thead>
 		<th>
 				slno
 				<input [(ngModel)]="srhSlno" placeholder="slno" size="2" class ='inputFilter'>				
@@ -61,9 +61,8 @@
 			</span>
 
 		</th> -->
-	</tr>
+	</thead>
 	
-	<tr>&nbsp;</tr>
 	<tr *ngFor = "let purchase of purchaseList | filterAndSortTable : {slno: srhSlno,
 		 vno: srhVehicle,
 		 productType:srhProductType,
@@ -78,7 +77,8 @@
 		<td>{{purchase.quantity}}</td>
 		<td>{{purchase.quantityUnit}}</td>
 		<td>{{purchase.pricePerQuintals}}</td>
-		<td>{{purchase.purchaseAdjustment}}</td>
+		<td><a routerLink ='purchaseAdjustment'>{{purchase.purchaseAdjustment}}</a>	
+		</td>
 		<td>{{purchase.aasamiName}}</td>
 		<td>{{purchase.brokerName}}</td>
 		<td>{{purchase.finalSettlement}}</td>
@@ -99,5 +99,6 @@
 	</select>
 </span>
 </div>
-				
+	
+
 	
