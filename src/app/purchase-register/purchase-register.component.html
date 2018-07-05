@@ -56,59 +56,59 @@
 </div>
 <!-- Purchase Adj Modal -->
 <div class="modal" id="purchaseAdjModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="purchaseAdjModalLabel">Purchase Adjustmant Details</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body">
-					<table class="table table-hover">
-							<tbody *ngIf="selectedPurchaseAdj">
-							<tr>
-								<th scope="row">Bags Cost</th>
-								<td>
-									{{selectedPurchaseAdj.bagsCost}}
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">Weight Bridge Cost</th>
-								<td>
-									{{selectedPurchaseAdj.weightBridgeCost}}
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">Kulli</th>
-								<td>
-									{{selectedPurchaseAdj.kulli}}
-								</td>
-							</tr>
-							<tr>
-								<th scope="row">Misc Cost</th>
-								<td>
-									{{selectedPurchaseAdj.miscCost}}
-								</td>
-							</tr>
-	
-							<tr>
-								<th scope="row">Labour Cost #</th>
-								<td>
-									{{selectedPurchaseAdj.labourCost}}
-								</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-				</div>
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="purchaseAdjModalLabel">Purchase Adjustmant Details</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<table class="table table-hover">
+					<tbody *ngIf="selectedPurchaseAdj">
+						<tr>
+							<th scope="row">Bags Cost</th>
+							<td>
+								{{selectedPurchaseAdj.bagsCost}}
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">Weight Bridge Cost</th>
+							<td>
+								{{selectedPurchaseAdj.weightBridgeCost}}
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">Kulli</th>
+							<td>
+								{{selectedPurchaseAdj.kulli}}
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">Misc Cost</th>
+							<td>
+								{{selectedPurchaseAdj.miscCost}}
+							</td>
+						</tr>
+
+						<tr>
+							<th scope="row">Labour Cost #</th>
+							<td>
+								{{selectedPurchaseAdj.labourCost}}
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
 			</div>
 		</div>
 	</div>
-	
+</div>
+
 <table class="table table-hover">
 	<thead>
 		<th>
@@ -191,7 +191,7 @@
 		<td>{{purchase.pricePerQuintals}}</td>
 		<td>
 			<a href="#purchaseAdjModal" data-toggle="modal" (click)="setPurchaseAdjDetails(purchaseList.indexOf(purchase))">
-				 Adjustment</a>
+				Adjustment</a>
 		</td>
 		<td>{{purchase.aasamiName}}</td>
 		<td>{{purchase.brokerName}}</td>
@@ -199,17 +199,23 @@
 		<td>{{purchase.status}}</td>
 	</tr>
 </table>
-<div class='paginationBox'>
-	<span class='paginationNav'>
+
+<div class="clearfix">
+	<span class="float-left">
 		<pagination-controls (pageChange)="p = $event"></pagination-controls>
 	</span>
-	<span class='paginationCount'>
-		<select [(ngModel)]="itemsPerPageCount">
-			<option>1</option>
-			<option>2</option>
-			<option>3</option>
-			<option>4</option>
-			<option>5</option>
-		</select>
+	<span class="float-right">
+		<div class="input-group mb-3">
+			<select class="custom-select" id="inputGroupSelect02" [(ngModel)]="itemsPerPageCount">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+				<option>4</option>
+				<option>5</option>
+			</select>
+			<div class="input-group-append">
+				<label class="input-group-text" for="inputGroupSelect02">Items per Page</label>
+			</div>
+		</div>
 	</span>
 </div>

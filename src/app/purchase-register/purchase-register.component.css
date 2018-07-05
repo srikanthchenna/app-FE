@@ -18,12 +18,12 @@ th{
   font-style: unset; 
 } */
 
-.paginationBox {  
-    width: 100%; /* increasing width from 210 to 216 because your border takes 6 extra px*/
+/* .paginationBox {  
+    width: 100%; increasing width from 210 to 216 because your border takes 6 extra px
   }
 .paginationNav {
-    margin: 0px; /* remove all margins to fit two divs in the container */
-    display: inline-block; /* display block elements in one line */
+    margin: 0px; remove all margins to fit two divs in the container
+    display: inline-block; display block elements in one line
   }
 .paginationCount{
     margin: 0px;
@@ -31,4 +31,4 @@ th{
   }
   .inputFilter {
     text-align: center;
-  }
+  } */
