@@ -22,11 +22,11 @@ export class PurchaseRegisterComponent implements OnInit {
    
   }
 
-  setPurchaseAdjDetails(i){
-    this.selectedPurchaseAdj = this.purchaseList[i].purchaseAdjustment;
+  setPurchaseAdjDetails(selectedPurchase :PurchaseRegisterDetails){
+    this.selectedPurchaseAdj = selectedPurchase.purchaseAdjustment;
   }
-  setVehicleDetails(i){
-    this.selectedVehicle = this.purchaseList[i].vehicle;
+  setVehicleDetails(selectedPurchase :PurchaseRegisterDetails){
+    this.selectedVehicle = selectedPurchase.vehicle;
   }
 
 }
