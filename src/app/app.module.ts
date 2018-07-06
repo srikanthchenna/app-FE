@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PurchaseRegisterComponent } from './purchase-register/purchase-register.component';
 import { CreatePurchaseComponent } from './create-purchase/create-purchase.component';
 import { FilterAndSortTablePipe } from './purchase-register/filter-and-sort-table.pipe';
+import { AppModelPopupComponent } from './app-model-popup/app-model-popup.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FilterAndSortTablePipe } from './purchase-register/filter-and-sort-tabl
     WorkersComponent,
     PurchaseRegisterComponent,
     CreatePurchaseComponent,
-    FilterAndSortTablePipe
+    FilterAndSortTablePipe,
+    AppModelPopupComponent
   ],
   imports: [
     BrowserModule,

@@ -1,114 +1,24 @@
 <h3>Purchase Register view</h3>
-
 <!-- Vehicle Modal -->
-<div class="modal" id="vehicleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="vehicleModalLabel">Vehicle Details</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<table class="table table-hover">
-					<tbody *ngIf="selectedVehicle">
-						<tr>
-							<th scope="row">Vehile #</th>
-							<td>
-								{{selectedVehicle.vehicleNo}}
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">Empty Weight</th>
-							<td>
-								{{selectedVehicle.emptyWeight}}
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">Load Weight</th>
-							<td>
-								{{selectedVehicle.loadWeight}}
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">Tare Weight</th>
-							<td>
-								{{selectedVehicle.tareWeight}}
-							</td>
-						</tr>
-
-						<tr>
-							<th scope="row">Weight Slip #</th>
-							<td>
-								{{selectedVehicle.weightSlip}}
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-			</div>
-		</div>
-	</div>
-</div>
+<app-app-model-popup modelType="vehicle" 
+	modelTitle ="Vehicle Details"
+	modelId="vehicleModal" 
+	[modelData]="selectedVehicle">
+</app-app-model-popup>
 <!-- Purchase Adj Modal -->
-<div class="modal" id="purchaseAdjModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="purchaseAdjModalLabel">Purchase Adjustmant Details</h5>
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span>
-				</button>
-			</div>
-			<div class="modal-body">
-				<table class="table table-hover">
-					<tbody *ngIf="selectedPurchaseAdj">
-						<tr>
-							<th scope="row">Bags Cost</th>
-							<td>
-								{{selectedPurchaseAdj.bagsCost}}
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">Weight Bridge Cost</th>
-							<td>
-								{{selectedPurchaseAdj.weightBridgeCost}}
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">Kulli</th>
-							<td>
-								{{selectedPurchaseAdj.kulli}}
-							</td>
-						</tr>
-						<tr>
-							<th scope="row">Misc Cost</th>
-							<td>
-								{{selectedPurchaseAdj.miscCost}}
-							</td>
-						</tr>
+<app-app-model-popup modelType="adjustment" 
+	modelTitle ="Purchase Adjustment Details"
+	modelId="purchaseAdjModal" 
+	[modelData]="selectedPurchaseAdj">
+</app-app-model-popup>
 
-						<tr>
-							<th scope="row">Labour Cost #</th>
-							<td>
-								{{selectedPurchaseAdj.labourCost}}
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-			</div>
-		</div>
-	</div>
-</div>
+<!-- 
+	// for simple text alert use as bellow.
+	<app-app-model-popup modelType="text" modelId="testModel" modelData="your text here"></app-app-model-popup>
+	<a href="#testModel" data-toggle="modal">heyyy</a> 
+-->
 
+			
 <table class="table table-hover">
 	<thead>
 		<th>
