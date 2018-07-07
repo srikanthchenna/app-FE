@@ -32,3 +32,6 @@ th{
   .inputFilter {
     text-align: center;
   } */
+  .collapse.in{
+    display: block!important;
+}
