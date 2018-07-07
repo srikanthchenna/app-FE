@@ -1,15 +1,20 @@
-<h3>Purchase Register view</h3>
+<div class="card ">
+	<div class="card-header" id="headingOne">
+		<h5 class="mb-0">
+			<h3 class="float-left"> Purchase Register view</h3>
+			<button class="btn btn-outline-info float-right" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true"
+			 aria-controls="collapseOne">
+				Search
+			</button>
+		</h5>
+	</div>
+</div>
+
 <!-- Vehicle Modal -->
-<app-app-model-popup modelType="vehicle" 
-	modelTitle ="Vehicle Details"
-	modelId="vehicleModal" 
-	[modelData]="selectedVehicle">
+<app-app-model-popup modelType="vehicle" modelTitle="Vehicle Details" modelId="vehicleModal" [modelData]="selectedVehicle">
 </app-app-model-popup>
 <!-- Purchase Adj Modal -->
-<app-app-model-popup modelType="adjustment" 
-	modelTitle ="Purchase Adjustment Details"
-	modelId="purchaseAdjModal" 
-	[modelData]="selectedPurchaseAdj">
+<app-app-model-popup modelType="adjustment" modelTitle="Purchase Adjustment Details" modelId="purchaseAdjModal" [modelData]="selectedPurchaseAdj">
 </app-app-model-popup>
 
 <!-- 
@@ -17,115 +22,139 @@
 	<app-app-model-popup modelType="text" modelId="testModel" modelData="your text here"></app-app-model-popup>
 	<a href="#testModel" data-toggle="modal">heyyy</a> 
 -->
+<!-- Search Form -->
+<div>
+	<div class="collapse" id="collapseExample">
+		<div class="card card-body">
 
-			
-<table class="table table-hover">
-	<thead>
-		<th>
-			slno
-			<input [(ngModel)]="srhSlno" placeholder="slno" size="2" class='inputFilter'>
-		</th>
-		<th>
-			Vehicle
-			<input [(ngModel)]="srhVehicle" placeholder="Venhicle No" size="10" class='inputFilter'>
-		</th>
-		<th>
-			Product Type
-			<select [(ngModel)]="srhProductType">
-				<option>Paddy</option>
-			</select>
+			<form>
+				<div class="form-group row">
+					<label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+					<div class="col-sm-10">
+						<input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com">
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+					<div class="col-sm-10">
+						<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 
-		</th>
-		<th>
-			# of Bags
-		</th>
-		<th>
-			Quantity
-		</th>
-		<th>
-			Qunatity Type
-		</th>
-		<th>
-			Price per Quintal
-		</th>
-		<th>
-			Purchase Adjustment
-		</th>
-		<th>
-			Aasami Name
-			<input [(ngModel)]="srhAasami" placeholder="Aasami Name" size="10" class='inputFilter'>
-		</th>
-		<th>
-			Broker Name
-			<input [(ngModel)]="srhBroker" placeholder="Broker Name" size="10" class='inputFilter'>
+<!-- Purchase Register result table  -->
+<div class="table">
+	<table class="table table-hover">
+		<thead>
+			<th>
+				slno
+				<input [(ngModel)]="srhSlno" placeholder="slno" size="2" class='inputFilter'>
+			</th>
+			<th>
+				Vehicle
+				<input [(ngModel)]="srhVehicle" placeholder="Venhicle No" size="10" class='inputFilter'>
+			</th>
+			<th>
+				Product Type
+				<select [(ngModel)]="srhProductType">
+					<option>Paddy</option>
+				</select>
+
+			</th>
+			<th>
+				# of Bags
+			</th>
+			<th>
+				Quantity
+			</th>
+			<th>
+				Qunatity Type
+			</th>
+			<th>
+				Price per Quintal
+			</th>
+			<th>
+				Purchase Adjustment
+			</th>
+			<th>
+				Aasami Name
+				<input [(ngModel)]="srhAasami" placeholder="Aasami Name" size="10" class='inputFilter'>
+			</th>
+			<th>
+				Broker Name
+				<input [(ngModel)]="srhBroker" placeholder="Broker Name" size="10" class='inputFilter'>
 
 
-		</th>
-		<th>
-			Final Settlement
-		</th>
-		<th>
-			Status
-			<select [(ngModel)]='srhStatus'>
-				<option>Purchased</option>
-				<option>Pending</option>
-			</select>
+			</th>
+			<th>
+				Final Settlement
+			</th>
+			<th>
+				Status
+				<select [(ngModel)]='srhStatus'>
+					<option>Purchased</option>
+					<option>Pending</option>
+				</select>
 
-		</th>
+			</th>
 
-		<!-- <th *ngFor = "let header of purchaseHeader">
+			<!-- <th *ngFor = "let header of purchaseHeader">
 			{{header.text}}
 			<span ng-if="{{header.searchType}}">
 				<input type="text"/>
 			</span>
 
 		</th> -->
-	</thead>
+		</thead>
 
-	<tr *ngFor="let purchase of purchaseList | filterAndSortTable : {slno: srhSlno,
+		<tr *ngFor="let purchase of purchaseList | filterAndSortTable : {slno: srhSlno,
 		 vno: srhVehicle,
 		 productType:srhProductType,
 		 aasami:srhAasami,
 		 broker:srhBroker,
 		 status:srhStatus
 		}|paginate: { itemsPerPage: itemsPerPageCount||10, currentPage: p }">
-		<td>{{purchase.sno}}</td>
-		<td>
-			<a href="#vehicleModal" data-toggle="modal" (click)="setVehicleDetails(purchase)">{{purchase.vehicleDetails.vehicleNo}}</a>
+			<td>{{purchase.sno}}</td>
+			<td>
+				<a href="#vehicleModal" data-toggle="modal" (click)="setVehicleDetails(purchase)">{{purchase.vehicle.vehicleNo}}</a>
 
-		</td>
-		<td>{{purchase.productType}}</td>
-		<td>{{purchase.bagsCount}}</td>
-		<td>{{purchase.quantity}}</td>
-		<td>{{purchase.quantityUnit}}</td>
-		<td>{{purchase.pricePerQuintals}}</td>
-		<td>
-			<a href="#purchaseAdjModal" data-toggle="modal" (click)="setPurchaseAdjDetails(purchase)">
-				{{getTotalAdjustmentsForPurchase(purchase.purchaseAdjustments)}}</a>
-		</td>
-		<td>{{purchase.aasamiName}}</td>
-		<td>{{purchase.brokerName}}</td>
-		<td>{{purchase.finalSettlement}}</td>
-		<td>{{purchase.status}}</td>
-	</tr>
-</table>
+			</td>
+			<td>{{purchase.productType}}</td>
+			<td>{{purchase.bagsCount}}</td>
+			<td>{{purchase.quantity}}</td>
+			<td>{{purchase.quantityUnit}}</td>
+			<td>{{purchase.pricePerQuintals}}</td>
+			<td>
+				<a href="#purchaseAdjModal" data-toggle="modal" (click)="setPurchaseAdjDetails(purchase)">
+					Adjustment</a>
+			</td>
+			<td>{{purchase.aasamiName}}</td>
+			<td>{{purchase.brokerName}}</td>
+			<td>{{purchase.finalSettlement}}</td>
+			<td>{{purchase.status}}</td>
+		</tr>
+	</table>
 
-<div class="clearfix">
-	<span class="float-left">
-		<pagination-controls (pageChange)="p = $event"></pagination-controls>
-	</span>
-	<span class="float-right">
-		<div class="input-group mb-3">
-			<select class="custom-select" id="inputGroupSelect02" [(ngModel)]="itemsPerPageCount">
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-				<option>5</option>
-			</select>
-			<div class="input-group-append">
-				<label class="input-group-text" for="inputGroupSelect02">Items per Page</label>
+	<div class="clearfix">
+		<span class="float-left">
+			<pagination-controls (pageChange)="p = $event"></pagination-controls>
+		</span>
+		<span class="float-right">
+			<div class="input-group mb-3">
+				<select class="custom-select" id="inputGroupSelect02" [(ngModel)]="itemsPerPageCount">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
+				<div class="input-group-append">
+					<label class="input-group-text" for="inputGroupSelect02">Items per Page</label>
+				</div>
 			</div>
-		</div>
-	</span>
+		</span>
+	</div>
 </div>
