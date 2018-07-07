@@ -1,4 +1,4 @@
-export class PurchaseAdjDetails {
+export class PurchaseAdjustments {
     bagsCost: number;
     weightBridgeCost: number;
     kulli: number;

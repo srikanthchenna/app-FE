@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { VehicleDetails } from '../../beans/vehicle-details';
-import {PurchaseAdjDetails} from './../../beans/purchaseAdjDetails';
+import {PurchaseAdjustments} from './../../beans/purchaseAdjustments';
 
 @Component({
   selector: 'app-app-model-popup',
@@ -17,7 +17,7 @@ export class AppModelPopupComponent implements OnInit {
   @Input()
   modelTitle:any;
 
-  selectedPurchaseAdj : PurchaseAdjDetails;
+  selectedPurchaseAdj : PurchaseAdjustments;
   selectedVehicle : VehicleDetails;
   
   constructor() { }

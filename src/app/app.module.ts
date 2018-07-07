@@ -13,6 +13,7 @@ import { PurchaseRegisterComponent } from './purchase-register/purchase-register
 import { CreatePurchaseComponent } from './create-purchase/create-purchase.component';
 import { FilterAndSortTablePipe } from './purchase-register/filter-and-sort-table.pipe';
 import { AppModelPopupComponent } from './app-model-popup/app-model-popup.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AppModelPopupComponent } from './app-model-popup/app-model-popup.compon
     PurchaseRegisterComponent,
     CreatePurchaseComponent,
     FilterAndSortTablePipe,
-    AppModelPopupComponent
+    AppModelPopupComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

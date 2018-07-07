@@ -1,15 +1,15 @@
 import {VehicleDetails} from './vehicle-details';
-import {PurchaseAdjDetails} from './purchaseAdjDetails';
+import {PurchaseAdjustments} from './purchaseAdjustments';
 
 export class PurchaseRegisterDetails {
 	sno:string;
-	vehicle:VehicleDetails;//link
+	vehicleDetails:VehicleDetails;//link
 	productType:string;
 	bagsCount:number;
 	quantity:number;
 	quantityUnit:string;
 	pricePerQuintals:number;
-	purchaseAdjustment:PurchaseAdjDetails;//link
+	purchaseAdjustments:PurchaseAdjustments;//link
 	brokerName:string;
 	aasamiName:string;
 	finalSettlement:number;

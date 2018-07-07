@@ -5,7 +5,7 @@ import { VehicleDetails } from '../beans/vehicle-details';
 export const PURCHASE_DETAILS: PurchaseRegisterDetails[] =[
     {
       "sno": "1",
-      "vehicle":VEHICLE_DETAILS[0],
+      "vehicleDetails":VEHICLE_DETAILS[0],
       "aasamiName": "srikanth",
       "brokerName": "vishnu",
       "productType": "Paddy",
@@ -13,7 +13,7 @@ export const PURCHASE_DETAILS: PurchaseRegisterDetails[] =[
       "quantity": 50,
       "quantityUnit": "Quintals",
       "pricePerQuintals": 1500,
-      "purchaseAdjustment": {
+      "purchaseAdjustments": {
         "bagsCost": 10,
         "weightBridgeCost": 150,
         "kulli": 300,
@@ -26,7 +26,7 @@ export const PURCHASE_DETAILS: PurchaseRegisterDetails[] =[
     {
       
       "sno": "2",
-      "vehicle": {
+      "vehicleDetails": {
         
         "vehicleNo": "TS 05 AB 1234",
         "weightSlip": "1",
@@ -41,7 +41,7 @@ export const PURCHASE_DETAILS: PurchaseRegisterDetails[] =[
       "quantity": 55,
       "quantityUnit": "Quintals",
       "pricePerQuintals": 1500,
-      "purchaseAdjustment": {
+      "purchaseAdjustments": {
         "bagsCost": 10,
         "weightBridgeCost": 150,
         "kulli": 300,
@@ -54,7 +54,7 @@ export const PURCHASE_DETAILS: PurchaseRegisterDetails[] =[
     },
     {
       "sno": "3",
-      "vehicle": {
+      "vehicleDetails": {
         
         "vehicleNo": "TS 05 AC 1234",
         "weightSlip": "1",
@@ -70,7 +70,7 @@ export const PURCHASE_DETAILS: PurchaseRegisterDetails[] =[
       "quantity": 60,
       "quantityUnit": "Quintals",
       "pricePerQuintals": 1500,
-      "purchaseAdjustment": {
+      "purchaseAdjustments": {
         "bagsCost": 10,
         "weightBridgeCost": 150,
         "kulli": 300,
@@ -83,7 +83,7 @@ export const PURCHASE_DETAILS: PurchaseRegisterDetails[] =[
     },
     {
       "sno": "4",
-      "vehicle": {
+      "vehicleDetails": {
         
         "vehicleNo": "TS 05 AD 1234",
         "weightSlip": "1",
@@ -99,7 +99,7 @@ export const PURCHASE_DETAILS: PurchaseRegisterDetails[] =[
       "quantity": 50,
       "quantityUnit": "Quintals",
       "pricePerQuintals": 1500,
-      "purchaseAdjustment": {
+      "purchaseAdjustments": {
         "bagsCost": 10,
         "weightBridgeCost": 150,
         "kulli": 300,
@@ -112,7 +112,7 @@ export const PURCHASE_DETAILS: PurchaseRegisterDetails[] =[
     },
     {
       "sno": "5",
-      "vehicle": {
+      "vehicleDetails": {
         "vehicleNo": "TS 05 AE 1234",
         "weightSlip": "1",
         "emptyWeight": 104,
@@ -126,7 +126,7 @@ export const PURCHASE_DETAILS: PurchaseRegisterDetails[] =[
       "quantity": 50,
       "quantityUnit": "Quintals",
       "pricePerQuintals": 1500,
-      "purchaseAdjustment": {
+      "purchaseAdjustments": {
         "bagsCost": 10,
         "weightBridgeCost": 150,
         "kulli": 300,

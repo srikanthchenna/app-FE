@@ -11,6 +11,8 @@ export class FilterAndSortTablePipe implements PipeTransform {
   //   && parms['broker'] && parms['status']
   // )
   //   return values;
+  
+  	if (!parms) return values;
     
    
     return values.filter(value=>
@@ -25,7 +27,7 @@ export class FilterAndSortTablePipe implements PipeTransform {
   
   }
   checkVehicle(value:PurchaseRegisterDetails, vno:string){
-   return vno ?value.vehicle.vehicleNo.toLocaleLowerCase().includes(vno.toLocaleLowerCase()): true;
+   return vno ?value.vehicleDetails.vehicleNo.toLocaleLowerCase().includes(vno.toLocaleLowerCase()): true;
   }
   checkSlno(value:PurchaseRegisterDetails, sno:string){
     return sno ?value.sno.includes(sno): true;

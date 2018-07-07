@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import {PurchaseRegisterDetails} from './../../beans/purchase-register-details';
-import {PurchaseAdjDetails} from './../../beans/purchaseAdjDetails';
+import {PurchaseAdjustments} from './../../beans/purchaseAdjustments';
 
 import {PURCHASE_DETAILS} from '../../mockData/purchaseDetailsResponse';
 import { VehicleDetails } from '../../beans/vehicle-details';
+import { AdminService } from './../admin.service';
+
 @Component({
   selector: 'app-purchase-register',
   templateUrl: './purchase-register.component.html',
@@ -11,22 +15,31 @@ import { VehicleDetails } from '../../beans/vehicle-details';
 })
 export class PurchaseRegisterComponent implements OnInit {
   purchaseList : PurchaseRegisterDetails[];
-  selectedPurchaseAdj : PurchaseAdjDetails;
+  selectedPurchaseAdj : PurchaseAdjustments;
   selectedVehicle : VehicleDetails;
   
-  constructor() { }
+  constructor(private adminService : AdminService, public sanitizer: DomSanitizer) { }
 
   ngOnInit() {
     //mocking Data
     this.purchaseList = PURCHASE_DETAILS;// TODO make this a ajax call later
-   
+   	
   }
 
   setPurchaseAdjDetails(selectedPurchase :PurchaseRegisterDetails){
-    this.selectedPurchaseAdj = selectedPurchase.purchaseAdjustment;
+    this.selectedPurchaseAdj = selectedPurchase.purchaseAdjustments;
   }
   setVehicleDetails(selectedPurchase :PurchaseRegisterDetails){
-    this.selectedVehicle = selectedPurchase.vehicle;
+    this.selectedVehicle = selectedPurchase.vehicleDetails;
+  }
+
+  getTotalAdjustmentsForPurchase(purchaseAdj : PurchaseAdjustments){
+  
+  	return purchaseAdj.bagsCost+
+            purchaseAdj.weightBridgeCost+
+              purchaseAdj.kulli+
+                purchaseAdj.miscCost+
+                  purchaseAdj.labourCost;
   }
 
 }
