@@ -109,7 +109,6 @@
 
 		</th> -->
 		</thead>
-
 		<tr *ngFor="let purchase of purchaseList | filterAndSortTable : {slno: srhSlno,
 		 vno: srhVehicle,
 		 productType:srhProductType,
@@ -122,7 +121,7 @@
 				<a href="#vehicleModal" data-toggle="modal" (click)="setVehicleDetails(purchase)">{{purchase.vehicleDetails.vehicleNo}}</a>
 
 			</td>
-			<td>{{purchase.productType}}</td>
+			<td>{{purchase.productType.type}}</td>
 			<td>{{purchase.bagsCount}}</td>
 			<td>{{purchase.quantity}}</td>
 			<td>{{purchase.quantityUnit}}</td>

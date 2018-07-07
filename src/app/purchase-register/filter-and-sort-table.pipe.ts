@@ -7,12 +7,9 @@ import {PurchaseRegisterDetails} from './../../beans/purchase-register-details';
 export class FilterAndSortTablePipe implements PipeTransform {
 
   transform(values: PurchaseRegisterDetails[], parms:JSON): any {
-  //   if(!parms['slno'] && !parms['vno'] && !parms['productType']&&parms['aasami'] 
-  //   && parms['broker'] && parms['status']
-  // )
-  //   return values;
-  
-  	if (!parms) return values;
+ 
+    if(values) return [];
+  	if (parms) return [];
     
    
     return values.filter(value=>
@@ -33,7 +30,7 @@ export class FilterAndSortTablePipe implements PipeTransform {
     return sno ?value.sno.includes(sno): true;
    }
    checkProductType(value:PurchaseRegisterDetails, type:string){
-    return type ?value.productType == type: true;
+    return type ?value.productType.type == type: true;
    }
 
    checkAasami(value:PurchaseRegisterDetails, aasami:string){

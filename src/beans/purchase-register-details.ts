@@ -1,10 +1,12 @@
 import {VehicleDetails} from './vehicle-details';
 import {PurchaseAdjustments} from './purchaseAdjustments';
+import {ProductType} from './product-type';
 
 export class PurchaseRegisterDetails {
+	id:number;
 	sno:string;
 	vehicleDetails:VehicleDetails;//link
-	productType:string;
+	productType:ProductType;
 	bagsCount:number;
 	quantity:number;
 	quantityUnit:string;
@@ -14,4 +16,7 @@ export class PurchaseRegisterDetails {
 	aasamiName:string;
 	finalSettlement:number;
 	status:string;
+	createdDate:string;
+	updatedDate:string;
+	retired:boolean;
 }
