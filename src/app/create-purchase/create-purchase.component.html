@@ -1,5 +1,5 @@
 <h1>Create Purchase</h1>
-<form [formGroup]="purchaseRegisterForm" (ngSubmit)="onSubmit()" >
+<form [formGroup]="purchaseRegisterForm" (ngSubmit)="onSubmit()">
 	<div class="panel-group">
 		<div class="panel panel-info">
 			<div class="panel-heading">Puchase Details</div>
@@ -16,51 +16,59 @@
 						<div class="form-group">
 							<label for="aasami_name">Aasami Name:</label> <input type="text"
 								formControlName="aasamiName" placeholder="Aasami Name"
-								name="aasami_name" class="form-control" id="aasami_name" ng-model="purchaseRegister.aasamiName">
+								name="aasami_name" class="form-control" id="aasami_name"
+								ng-model="purchaseRegister.aasamiName">
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="form-group">
 							<label for="broker_name">Broker Name:</label> <input type="text"
 								formControlName="brokerName" placeholder="Broker Name"
-								name="broker_name" class="form-control" id="broker_name" ng-model="purchaseRegister.brokerName">
+								name="broker_name" class="form-control" id="broker_name"
+								ng-model="purchaseRegister.brokerName">
 						</div>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-4">
 						<div class="form-group">
-							<label for="product_name">Product Name:</label>
-								<select name="Product Type" formControlName="productType" class="form-control" id="product_name" class="form-control" ng-model="purchaseRegister.productName" ng-dropdown required >
-            						<option ng-option value="Default">Select</option>
-            						<option ng-option value="Paddy">Paddy</option>
-            						<option ng-option value="Rice">Rice</option>
-         						</select>
+							<label for="product_name">Product Name:</label> <select
+								name="Product Type" formControlName="productType"
+								class="form-control" id="product_name" class="form-control"
+								ng-model="purchaseRegister.productName" ng-dropdown required>
+								<option ng-option value="Paddy" selected>Paddy</option>
+								<option ng-option value="Rice">Rice</option>
+							</select>
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="form-group">
 							<label for="bags_count">Bags Count:</label> <input type="text"
 								formControlName="bagsCount" placeholder="Bags Count"
-								name="bags_count" class="form-control" id="bags_count" ng-model="purchaseRegister.bagsCount">
+								name="bags_count" class="form-control" id="bags_count"
+								ng-model="purchaseRegister.bagsCount">
 						</div>
 					</div>
 					<div class="col-md-2">
 						<div class="form-group">
 							<label for="quantity">Quantity:</label> <input type="text"
 								formControlName="quantity" placeholder="Quantity"
-								name="quantity" class="form-control" id="quantity" ng-model="purchaseRegister.quantity">
+								name="quantity" class="form-control" id="quantity"
+								ng-model="purchaseRegister.quantity">
 						</div>
 					</div>
 					<div class="col-md-2">
 						<div class="form-group">
-							<label for="quantity">Quantity Unit:</label> <input
-								type="text" formControlName="quantityUnit"
-								placeholder="Quantity Unit" name="quantity_unit"
-								class="form-control" id="quantity_unit" ng-model="purchaseRegister.quantityUnit">
+							<label for="quantity">Quantity Unit:</label> <select
+								name="quantity unit" formControlName="quantityUnit"
+								class="form-control" id="quantity_unit" class="form-control"
+								ng-model="purchaseRegister.quantityUnit" ng-dropdown required>
+								<option ng-option value="Quintal" selected>Quintal</option>
+								<option ng-option value="Ton">Ton</option>
+							</select>
 						</div>
 					</div>
-					
+
 				</div>
 				<div class="row">
 					<div class="col-md-4">
@@ -68,7 +76,8 @@
 							<label for="price_per_quintals">Price Per Quintals:</label> <input
 								type="text" formControlName="pricePerQuintals"
 								placeholder="Price Per Quintals" name="price_per_quintals"
-								class="form-control" id="price_per_quintals" ng-model="purchaseRegister.pricePerQuintals">
+								class="form-control" id="price_per_quintals"
+								ng-model="purchaseRegister.pricePerQuintals">
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -76,7 +85,8 @@
 							<label for="final_settlement">Final Settlement:</label> <input
 								type="text" formControlName="finalSettlement"
 								placeholder="Final Settlement" name="final_settlement"
-								class="form-control" id="final_settlement" ng-model="purchaseRegister.finalSettlement">
+								class="form-control" id="final_settlement"
+								ng-model="purchaseRegister.finalSettlement">
 						</div>
 					</div>
 					<div class="col-md-4"></div>
@@ -93,14 +103,16 @@
 						<div class="form-group">
 							<label for="vehicle_no">Vehicle No:</label> <input type="text"
 								formControlName="vehicleNo" placeholder="Vehicle No"
-								name="vehicle_no" class="form-control" id="vehicle_no" ng-model="purchaseRegister.vehicleDetails.vehicleNo">
+								name="vehicle_no" class="form-control" id="vehicle_no"
+								ng-model="purchaseRegister.vehicleDetails.vehicleNo">
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="form-group">
 							<label for="weight_slip">Weight Slip:</label> <input type="text"
 								formControlName="weightSlip" placeholder="Weight Slip"
-								name="weight_slip" class="form-control" id="weight_slip" ng-model="purchaseRegister.vehicleDetails.weightSlip">
+								name="weight_slip" class="form-control" id="weight_slip"
+								ng-model="purchaseRegister.vehicleDetails.weightSlip">
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -108,7 +120,8 @@
 							<label for="empty_weight">Empty Weight:</label> <input
 								type="text" formControlName="emptyWeight"
 								placeholder="Empty Weight" name="empty_weight"
-								class="form-control" id="empty_weight" ng-model="purchaseRegister.vehicleDetails.emptyWeight">
+								class="form-control" id="empty_weight"
+								ng-model="purchaseRegister.vehicleDetails.emptyWeight">
 						</div>
 					</div>
 				</div>
@@ -117,14 +130,16 @@
 						<div class="form-group">
 							<label for="load_weight">Load Weight:</label> <input type="text"
 								formControlName="loadWeight" placeholder="Load Weight"
-								name="load_weight" class="form-control" id="load_weight" ng-model="purchaseRegister.vehicleDetails.loadWeight">
+								name="load_weight" class="form-control" id="load_weight"
+								ng-model="purchaseRegister.vehicleDetails.loadWeight">
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="form-group">
 							<label for="tare_weight">Tare Weight:</label> <input type="text"
 								formControlName="tareWeight" placeholder="Tare Weight"
-								name="tare_weight" class="form-control" id="tare_weight" ng-model="purchaseRegister.vehicleDetails.tareWeight">
+								name="tare_weight" class="form-control" id="tare_weight"
+								ng-model="purchaseRegister.vehicleDetails.tareWeight">
 						</div>
 					</div>
 					<div class="col-md-4"></div>
@@ -133,7 +148,7 @@
 		</div>
 	</div>
 
-	<div class="panel-group"  formGroupName="purchaseAdjustments">
+	<div class="panel-group" formGroupName="purchaseAdjustments">
 		<div class="panel panel-info">
 			<div class="panel-heading">Adjustment Details</div>
 			<div class="panel-body">
@@ -142,7 +157,8 @@
 						<div class="form-group">
 							<label for="bags_cost">Bags Cost:</label> <input type="text"
 								formControlName="bagsCost" placeholder="Bags Cost"
-								name="bags_cost" class="form-control" id="bags_cost" ng-model="purchaseRegister.purchaseAdjustments.bagsCost">
+								name="bags_cost" class="form-control" id="bags_cost"
+								ng-model="purchaseRegister.purchaseAdjustments.bagsCost">
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -150,14 +166,16 @@
 							<label for="weight_bridge_cost">Weight Bridge Cost:</label> <input
 								type="text" formControlName="weightBridgeCost"
 								placeholder="Weight Bridge Cost" name="weight_bridge_cost"
-								class="form-control" id="weight_bridge_cost" ng-model="purchaseRegister.purchaseAdjustments.weightBridgeCost">
+								class="form-control" id="weight_bridge_cost"
+								ng-model="purchaseRegister.purchaseAdjustments.weightBridgeCost">
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="form-group">
 							<label for="kulli">Kulli:</label> <input type="text"
 								formControlName="kulli" placeholder="Kulli" name="kulli"
-								class="form-control" id="kulli" ng-model="purchaseRegister.purchaseAdjustments.kulli">
+								class="form-control" id="kulli"
+								ng-model="purchaseRegister.purchaseAdjustments.kulli">
 						</div>
 					</div>
 				</div>
@@ -166,14 +184,16 @@
 						<div class="form-group">
 							<label for="misc_cost">Misc Cost:</label> <input type="text"
 								formControlName="miscCost" placeholder="Misc Cost"
-								name="misc_cost" class="form-control" id="misc_cost" ng-model="purchaseRegister.purchaseAdjustments.miscCost">
+								name="misc_cost" class="form-control" id="misc_cost"
+								ng-model="purchaseRegister.purchaseAdjustments.miscCost">
 						</div>
 					</div>
 					<div class="col-md-4">
 						<div class="form-group">
 							<label for="labour_cost">Labour Cost:</label> <input type="text"
 								formControlName="labourCost" placeholder="Labour Cost"
-								name="labour_cost" class="form-control" id="labour_cost" ng-model="purchaseRegister.purchaseAdjustments.labourCost">
+								name="labour_cost" class="form-control" id="labour_cost"
+								ng-model="purchaseRegister.purchaseAdjustments.labourCost">
 						</div>
 					</div>
 					<div class="col-md-4"></div>

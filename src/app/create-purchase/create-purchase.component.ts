@@ -17,11 +17,12 @@ export class CreatePurchaseComponent implements OnInit {
 
 	purchaseRegisterForm: FormGroup;
 	
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private createPurchase:CreatePurchaseService) { }
   
   onSubmit(purchaseOrder){
     console.log(this.purchaseRegisterForm.value);
-    alert("The purchaseOrder was submitted");
+		alert("The purchaseOrder was submitted");
+		this.createPurchase.createPurchase(this.purchaseRegisterForm.value);
   }
 
   ngOnInit() {
