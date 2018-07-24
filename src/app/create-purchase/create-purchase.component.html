@@ -35,9 +35,9 @@
 							<label for="product_name">Product Name:</label> <select
 								name="Product Type" formControlName="productType"
 								class="form-control" id="product_name" class="form-control"
-								ng-model="purchaseRegister.productName" ng-dropdown required>
-								<option ng-option value="Paddy" selected>Paddy</option>
-								<option ng-option value="Rice">Rice</option>
+								ng-model="purchaseRegister.productType" ng-dropdown required>
+								<option ng-options="x.type for x in productTypes" [value]="Paddy">sss{{x}}{{x.type}}</option>
+								
 							</select>
 						</div>
 					</div>

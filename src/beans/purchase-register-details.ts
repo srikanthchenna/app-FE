@@ -19,4 +19,10 @@ export class PurchaseRegisterDetails {
 	createdDate:string;
 	updatedDate:string;
 	retired:boolean;
+
+	constructor(req : any){
+		if(req){
+			this.sno = req.sno;
+		}
+	}
 }

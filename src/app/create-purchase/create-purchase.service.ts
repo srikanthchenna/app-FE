@@ -17,13 +17,21 @@ export class CreatePurchaseService {
     const headerDict = {
       'Content-Type': 'application/json',
       'Accept': 'application/json',
-      'Access-Control-Allow-Headers': 'Content-Type',
+      'Authorization': 'Basic c3Jpa2FudGg6c3Jpa2FudGg='
     };
 
     const requestOptions = {                                                                                                                                                                                 
         headers: new HttpHeaders(headerDict), 
     };
-    this.httpClient.post("http://localhost:9090/purchaseRegister/createPurchase",{},requestOptions);
+    this.httpClient.post("http://localhost:9090/purchaseRegister/createPurchase",purchaseRegister,requestOptions)
+    .subscribe(
+      data => {
+          console.log("POST Request is successful ", data);
+      },
+      error => {
+          console.log("Error", error);
+      }
+    );   
   }
   
 }

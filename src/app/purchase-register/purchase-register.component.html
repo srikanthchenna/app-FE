@@ -109,13 +109,7 @@
 
 		</th> -->
 		</thead>
-		<tr *ngFor="let purchase of purchaseList | filterAndSortTable : {slno: srhSlno,
-		 vno: srhVehicle,
-		 productType:srhProductType,
-		 aasami:srhAasami,
-		 broker:srhBroker,
-		 status:srhStatus
-		}|paginate: { itemsPerPage: itemsPerPageCount||10, currentPage: p }">
+		<tr *ngFor="let purchase of purchaseList">
 			<td>{{purchase.sno}}</td>
 			<td>
 				<a href="#vehicleModal" data-toggle="modal" (click)="setVehicleDetails(purchase)">{{purchase.vehicleDetails.vehicleNo}}</a>
